@@ -31,6 +31,9 @@ winget install OpenJS.NodeJS.LTS
 
 # Visual Studio Build Tools
 winget install Microsoft.VisualStudio.2022.BuildTools
+
+# Rustup をインストール
+winget install Rustlang.Rustup
 ```
 
 **2. Visual Studio Build Tools の設定**
@@ -57,7 +60,7 @@ node --version    # v18以上
 
 ```bash
 # プロジェクトディレクトリに移動
-cd fluxforge
+cd C:\Users\name\Downloads\fluxforge\fluxforge
 
 # npm依存関係をインストール
 npm install
