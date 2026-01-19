@@ -1,0 +1,45 @@
+[package]
+name = "fluxforge"
+version = "1.0.0"
+description = "File conversion made simple"
+authors = ["FluxForge Team"]
+license = "MIT"
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-shell = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# PDF processing
+pdf = "0.9"
+image = "0.25"
+resvg = "0.44"
+
+# Archive handling
+zip = "2"
+sevenz-rust = "0.6"
+unrar = "0.5"
+
+# Video/GIF (FFmpeg bindings)
+# Note: Requires FFmpeg installed on system
+tokio = { version = "1", features = ["full"] }
+chrono = "0.4"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
