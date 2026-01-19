@@ -46,10 +46,6 @@
   "plugins": {
     "shell": {
       "open": true
-    },
-    "fs": {
-      "all": true,
-      "scope": ["$DOCUMENT/**", "$DOWNLOAD/**", "$HOME/**"]
     }
   }
 }
